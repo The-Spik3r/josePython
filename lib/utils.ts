@@ -10,6 +10,7 @@ const toCamelCase = (str: string) =>
   str.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
 
 // Función recursiva para convertir todo el objeto
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const convertToCamelCase = (obj: any): any => {
   if (Array.isArray(obj)) {
       return obj.map((item) => convertToCamelCase(item));
@@ -18,6 +19,7 @@ export const convertToCamelCase = (obj: any): any => {
           const camelKey = toCamelCase(key);
           acc[camelKey] = convertToCamelCase(obj[key]);
           return acc;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
       }, {} as any);
   }
   return obj;
