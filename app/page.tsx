@@ -171,7 +171,6 @@ function highlightPythonSyntax(line: string) {
   let currentWord = ""
   let inString = false
   let stringChar = ""
-  const inComment = false
 
   for (let i = 0; i < line.length; i++) {
     const char = line[i]
